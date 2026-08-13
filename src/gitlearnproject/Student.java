@@ -25,6 +25,12 @@ public class Student {
     }
 
     public void setEmail(String email) {
+        if (email==null || email.isEmpty())
+            throw new IllegalArgumentException("email cannot is empty");
+        
+        if (!email.contains("@"))
+            throw new IllegalArgumentException("Invalid email");
+        
         this.email = email;
     }
     
